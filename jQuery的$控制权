@@ -1,0 +1,57 @@
+If you are using the same jQuery version with this guide:1.9.1 
+Please add below codes:
+
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>                     
+<script>                                                                                    
+    var jq191 = jQuery.noConflict(true);//这句是为了防止与其它js框架使用“$”符号做为对象的引用起冲突。
+    window.jQuery = window.$ = jq191;   //这句话的意思是 jQuery  $  jq191三者等价使用
+</script> 
+
+If you are using the other version of jQuery, instead of jQuery 1.9.1 
+Please add below codes:
+
+<script type="text/javascript" src="js/Your Jquery Version.js"></script> 
+<script>
+    var jq191 = jQuery.noConflict(true); //交出jQuery的$符使用权，并用jq191代替;                     
+</script>
+
+
+Query是有良好的封装，全局只有一个jQuery对象，不污染顶级域名。
+    一、jQuery默认使用"$"操作符，prototype等其他框架也使用"$"，于是，如果jQuery在其他库之后引入，
+    那么jQuery将获得"$"使用权。这样的情况也很容易理解，毕竟JS是从上到下流式执行的。
+    二、同样的道理，如果在其他使用"$"的库之前引入jQuery，那么jQuery将不会占用"$"。
+ 
+在第一种情况时，如果想使jQuery让出"$"，只需要使用下面的语句：
+Js代码  
+jQuery.noConfilct();  
+
+该函数会返回jQuery对象本身，于是可以用来取别名，例如
+Js代码
+var j = jQuery.noConfilt();  
+
+其实，如果单纯地想取别名，使用var j = jQuery;就可以，但是上面的用法是更好的，后面会说到原因。
+http://zhidao.baidu.com/link?url=RF2G3puz7SBNl1zxQvXZKHffQh7RUfOqJ
+EzK0HLHZ0IQ4OT5h-ciaFjIMgFuXQL4NKHExkqA52JYx8F5-B1GpRsbNPBCt4kn9eZLOGRx34a
+
+http://www.cnblogs.com/scy251147/archive/2011/04/02/2003783.html
+
+将$引用的对象映射回原始的对象。
+<script>
+	jQuery.noConflict(); 
+	jQuery(function(){
+		// 使用 jQuery
+		alert(jQuery('#tid').val());//这时如果使用$就会报错
+	});
+</script>
+
+恢复使用别名，然后创建并执行一个函数，在这个函数的作用域中仍然将$作为jQuery的别名来使用。
+在这个函数中，原来的$对象是无效的。这个函数对于大多数不依赖于其他库的插件都十分有效。
+<script>
+	jQuery.noConflict();//先是让渡$的使用权
+	(function(t) { //用jQuery匿名函数定义一个jQuery的别名t;
+	  t(function() {
+		// 使用 t 作为 jQuery 别名的代码
+		alert(t('#tid').val());
+	  });
+	})(jQuery);
+</script>
