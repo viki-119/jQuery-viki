@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>transform</title>
+<script type="text/javascript" src="./jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#add").click(function(){
+			$("#second").append($("#first option:selected"));
+	})
+	$("#add_all").click(function(){
+			$("#second").append($("#first option"));
+	})
+	$("#remove").click(function(){
+			$("#first").append($("#second option:selected"));
+	})
+	$("#remove_all").click(function(){
+			$("#first").append($("#second option"));
+	})
+	//双击时从左侧移动到右侧
+	$("#first").dblclick(function(){
+		$("#second").append($("#first option:selected"));
+	})
+	$("#second").dblclick(function(){
+		$("#first").append($("#second option:selected"));
+	})
+
+})
+</script>
+<style type="text/css">      </style>
+</head>
+<body>
+	<table width="285" height="169" border="0" align="left" cellpadding="0" cellspacing="0">
+		<tr>
+			<td  width="126">
+				<!--multiple="multiple" 能同时选择多个 size="10" 确定下拉选的长度-->
+				<select name="first" size="10" multiple="multiple" class="td3"id="first">
+					<option value="选项1">选项1</option>
+					<option value="选项2">选项2</option>
+					<option value="选项3">选项3</option>
+					<option value="选项4">选项4</option>
+					<option value="选项5">选项5</option>
+					<option value="选项6">选项6</option>
+					<option value="选项7">选项7</option>
+					<option value="选项8">选项8</option>
+				</select>
+			</td>
+			<td  width="69" valign="middle">
+				<input name="add" id="add" type="button" class="button"value="-->"/>
+				<input name="add_all" id="add_all" type="button" class="button"value="==>"/>
+				<input name="remove" id="remove" type="button" class="button"value="<--">
+				<input name="remove_all" id="remove_all" type="button" class="button"value="<==">
+			</td>
+			<td  width="126" align="left">
+				<select name="second" size="10" multiple="multiple" class="td3"id="second">
+					<option value="选项9">选项9</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+
+	<script>
+
+	</script>
+</body>
+</html>
