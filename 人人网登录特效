@@ -1,0 +1,33 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//获取焦点
+		$("#b1").focus(function(){
+			//获取当前文本框的值
+			var curValue=$(this).val();
+			//如果当前文本框的值与默认值相等
+			if(curValue==this.defaultValue){
+				//将当前文本框的值设置为""
+				$(this).val("");
+			}
+		}).blur(function(){//这里是连写        失去焦点
+			//获取当前文本框的值
+			var curValue=$(this).val();
+			//判断当前文本框的值是否为空
+			if($.trim(curValue)==""){
+				//设置当前文本框的值为默认值
+				$(this).val(this.defaultValue);
+			}
+		})
+	});
+</script>
+</head>
+<body>
+	账号：<input type="text" value="用户邮箱/手机号/用户名" id="b1" />
+	密码：<input type="password" value="" id="b2" /><br>
+	<input type="button" value="登录" id="b3" />
+</body>
+</html>
