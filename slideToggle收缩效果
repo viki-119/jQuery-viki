@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("span").each(function(){
+			$(this).click(function(){
+				$(this).next().slideToggle(200);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="menu1">
+		<span>收缩展开效果1</span>
+		<div class="text">
+			1<br />
+			2<br />
+			3<br />
+		</div>
+	</div>
+	<div id="menu2">
+		<span>收缩展开效果2</span>
+		<div class="text">
+			1<br />
+			2<br />
+			3<br />
+		</div>
+	</div>
+	<div id="menu3">
+		<span>收缩展开效果3</span>
+		<div class="text">
+			1<br />
+			2<br />
+			3<br />
+		</div>
+	</div>
+	<div id="menu4">
+		<span>收缩展开效果4</span>
+		<div class="text">
+			1<br />
+			2<br />
+			3<br />
+		</div>
+	</div>
+</body>
+</html>
