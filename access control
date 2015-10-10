@@ -1,0 +1,126 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+	function SelectAllBox(){
+		$("input[type=checkbox]").attr("checked","checked");
+	}
+	function unSelectAllBox(){
+		$("input[type=checkbox]").attr("checked",null);
+	}
+	function goSelect(id){
+		var arrayId=id.split("_");
+		//父类id
+		var superid=arrayId[0]+"_"+arrayId[0];
+		//alert(arrayId[0]+" "+arrayId[1]);
+		if(arrayId[0]!=arrayId[1]){
+			//如果是点击子类的复选框，则父类被选中
+			if($("#"+id)[0].checked){
+				$("#"+superid).attr("checked","checked");
+			}else{
+				//false表示无被选中的，true表示有被选中的
+				var flag=false;
+				//如果取消子类的复选框，则遍历子类的复选框
+				var $child=$("input[type=checkbox][id^="+arrayId[0]+"]:not([id$="+arrayId[0]+"])");
+				$child.each(function(){
+				//如果子类的复选框没有被选中的，则取消父类的复选框
+				//如果子类的复选框有被选中的
+					if(this.checked){
+						flag=true;
+						return;
+					}
+				})
+				//子类中无被选中的
+				if(!flag){
+					$("#"+superid).attr("checked",null);
+				}
+			}
+		}
+		//父类的复选框
+		if(arrayId[0]==arrayId[1]){
+			if($("#"+id)[0].checked){
+				$("input[type=checkbox][id^="+arrayId[0]+"]").attr("checked","checked");
+			}else{
+				$("input[type=checkbox][id^="+arrayId[0]+"]").attr("checked",null)
+			}
+		}
+	}
+</script>
+
+<style type="text/css">
+	<!--
+	.menu div{float:left;margin-right:100px;}
+	fieldset{width:850px;}
+	-->
+</style>
+</head>
+<body>
+	<input id="SelectAllBox" type="button" value="全选" onclick="SelectAllBox()">
+	<input id="unSelectAllBox" type="button" value="全不选" onclick="unSelectAllBox()">
+	<div id="menu1" class="menu">
+		<fieldset style='padding:5px;clear:left;'>
+			<legend>
+				<input type="checkbox" name="menuModule" value="company,company"
+					id="company_company" onclick="goSelect(this.id)" title="客户管理">客户管理
+			</legend>
+			<div>
+				<input type="checkbox" name="menuModule" value="company,base"
+					id="company_base" onclick="goSelect(this.id)" title="客户拜访">客户拜访
+			</div>
+			<div>
+				<input type="checkbox" name="menuModule" value="company,linkMan"
+					id="company_linkMan" onclick="goSelect(this.id)" title="联系人列表">联系人列表
+			</div>
+			<div>
+				<input type="checkbox" name="menuModule" value="company,linkTouch"
+					id="company_linkTouch" onclick="goSelect(this.id)" title="联系记录列表">联系记录列表
+			</div>
+			<div>
+				<input type="checkbox" name="menuModule" value="company,rule"
+					id="company_rule" onclick="goSelect(this.id)" title="客户查重设置">客户查重设置
+			</div>
+		</fieldset>
+	</div>
+	<div id="menu2" class="menu">
+		<fieldset style='padding:5px;clear:left;'>
+			<legend>
+				<input type="checkbox" name="menuModule" value="sys,sys"
+					id="sys_sys" onclick="goSelect(this.id)" title="系统设置">系统设置
+			</legend>
+			<div>
+				<input type="checkbox" name="menuModule" value="sys,group"
+					id="sys_group" onclick="goSelect(this.id)" title="部门设置">部门设置
+			</div>
+			<div>
+				<input type="checkbox" name="menuModule" value="sys,user"
+					id="sys_user" onclick="goSelect(this.id)" title="人事管理">人事管理
+			</div>
+			<div>
+				<input type="checkbox" name="menuModule" value="sys,role"
+					id="sys_role" onclick="goSelect(this.id)" title="操作权限组">操作权限组
+			</div>
+			<div>
+				<input type="checkbox" name="menuModule" value="sys,province"
+					id="sys_province" onclick="goSelect(this.id)" title="省份资料">省份资料
+			</div>
+		</fieldset>
+	</div>
+	<div id="menu3" class="menu">
+		<fieldset style='padding:5px;clear:left;'>
+			<legend>
+				<input type="checkbox" name="menuModule" value="report,report"
+					id="report_report" onclick="goSelect(this.id)" title="报表与分析">报表与分析
+			</legend>
+			<div>
+				<input type="checkbox" name="menuModule" value="report,khflfx"
+					id="report_khflfx" onclick="goSelect(this.id)" title="客户分类分析">客户分类分析
+			</div>
+			<div>
+				<input type="checkbox" name="menuModule" value="report,khfx"
+					id="report_khfx" onclick="goSelect(this.id)" title="客户分析">客户分析
+			</div>
+		</fieldset>
+	</div>
+</body>
+</html>
