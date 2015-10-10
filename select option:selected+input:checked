@@ -6,7 +6,7 @@
 <script type="text/javascript" src="./jquery-1.9.1.js"></script>
 <script type="text/javascript">
 $(function(){
-	//针对select
+	//针对select  选中Single2  Multiple2  Multiple3
 	$("#single").val("Single2");
 	$("#multiple").val(["Multiple2", "Multiple3"]);
 	//针对checkbox和radio
