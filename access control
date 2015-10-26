@@ -4,11 +4,17 @@
 <script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
 <script type="text/javascript">
 	function SelectAllBox(){
-		$("input[type=checkbox]").attr("checked","checked");
+	$("input[type=checkbox]").prop("checked", true);
 	}
 	function unSelectAllBox(){
-		$("input[type=checkbox]").attr("checked",null);
+		$("input[type=checkbox]").prop('checked','');
 	}
+	//function SelectAllBox(){
+		//$("input[type=checkbox]").attr("checked","checked");
+	//}
+	//function unSelectAllBox(){
+		//$("input[type=checkbox]").attr("checked",null);
+	//}
 	function goSelect(id){
 		var arrayId=id.split("_");
 		//父类id
