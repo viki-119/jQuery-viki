@@ -24,7 +24,8 @@
 		if(arrayId[0]!=arrayId[1]){
 			//如果是点击子类的复选框，则父类被选中
 			if($("#"+id)[0].checked){
-				$("#"+superid).attr("checked","checked");
+				$("#"+superid).prop("checked","checked");
+				//$("#"+superid).attr("checked","checked");
 			}else{
 				//false表示无被选中的，true表示有被选中的
 				var flag=false;
@@ -40,16 +41,19 @@
 				})
 				//子类中无被选中的
 				if(!flag){
-					$("#"+superid).attr("checked",null);
+					//$("#"+superid).attr("checked",null);
+					$("#"+superid).prop("checked",null);
 				}
 			}
 		}
 		//父类的复选框
 		if(arrayId[0]==arrayId[1]){
 			if($("#"+id)[0].checked){
-				$("input[type=checkbox][id^="+arrayId[0]+"]").attr("checked","checked");
+				//$("input[type=checkbox][id^="+arrayId[0]+"]").attr("checked","checked");
+				$("input[type=checkbox][id^="+arrayId[0]+"]").prop("checked","checked");
 			}else{
-				$("input[type=checkbox][id^="+arrayId[0]+"]").attr("checked",null)
+				//$("input[type=checkbox][id^="+arrayId[0]+"]").attr("checked",null)
+				$("input[type=checkbox][id^="+arrayId[0]+"]").prop("checked",null)
 			}
 		}
 	}
