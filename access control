@@ -9,6 +9,7 @@
 	function unSelectAllBox(){
 		$("input[type=checkbox]").prop('checked','');
 	}
+	//http://www.oschina.net/question/42741_108135
 	//function SelectAllBox(){
 		//$("input[type=checkbox]").attr("checked","checked");
 	//}
