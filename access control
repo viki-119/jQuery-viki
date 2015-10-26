@@ -10,6 +10,8 @@
 		$("input[type=checkbox]").prop('checked','');
 	}
 	//http://www.oschina.net/question/42741_108135
+	//http://www.cnblogs.com/zhwl/p/3520162.html
+	//http://blog.sina.com.cn/s/blog_655388ed01017cnc.html
 	//function SelectAllBox(){
 		//$("input[type=checkbox]").attr("checked","checked");
 	//}
