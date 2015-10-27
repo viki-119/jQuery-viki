@@ -1,2 +1,3 @@
 # jQuery
-java web develop
+jQuery表单验证
+http://jqueryvalidation.org/
