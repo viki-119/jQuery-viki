@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<script type="text/javascript" src="./jquery-2.0.0.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("ul li>button").each(function(index,Dom){
+		$(this).click(function(){
+			var src=$(this).attr("llt");
+			$("#p >img").get(0).src=src;
+		})
+	})
+})
+</script>
+<style type="text/css">
+	p body ul li button img{padding:0px;margin:0;}
+	ul li{list-style:none;float:left;}
+	p{width:100%;position:absolute;}
+	ul{position:relative;top:200px;left:100px;}
+	
+</style>
+</head>
+<body>
+	<p id="p"><img src="1.jpg"/></p>
+	<ul>
+		<li><button llt="11.jpg"></button></li>
+		<li><button llt="22.jpg"></button></li>
+		<li><button llt="33.jpg"></button></li>
+		<li><button llt="44.jpg"></button></li>
+	</ul>
+</body>
+</html>
