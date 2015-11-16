@@ -1,0 +1,13 @@
+<div id="content">
+	<button class="bt1">button1</button>
+	<button class="bt1">button2</button>
+</div>
+
+<script>
+	$("#content").find(".bt1").click(function(){
+		alert("hhhhh")
+	})
+	$(".bt1","#content").on("click",function(){
+		javascript:alert('asdfasd');//这两个方法是等价的
+	});
+</script>
