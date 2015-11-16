@@ -8,3 +8,5 @@ http://www.mb5u.com/jquery/f1/
 jquery api document:
 
 http://api.jquery.com/
+
+http://jquery.com/
