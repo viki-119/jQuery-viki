@@ -5,5 +5,6 @@ http://jqueryvalidation.org/
 
 http://www.mb5u.com/jquery/f1/
 
-jquery api document 
+jquery api document:
+
 http://api.jquery.com/
