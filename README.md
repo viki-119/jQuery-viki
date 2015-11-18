@@ -1,7 +1,7 @@
 # jQuery
 引入网络中的jQuery
 
-              <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
 jQuery表单验证
 
