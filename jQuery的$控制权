@@ -55,3 +55,25 @@ http://www.cnblogs.com/scy251147/archive/2011/04/02/2003783.html
 	  });
 	})(jQuery);
 </script>
+
+<!doctype html>
+<html>
+    <head>
+	<meta charset="utf-8">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+	<!--<script>
+		(function($){
+			$("#xn").append($("#xt"));
+		})(jQuery);
+        </script>-->
+    </head>
+    <body>
+	<div id="xt">wwwwwww</div>
+    	<div id="xn">eeeee</div>
+        <script>
+		(function($){
+			$("#xn").append($("#xt"));
+		})(jQuery);
+        </script>
+    </body>
+</html>
