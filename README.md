@@ -18,4 +18,6 @@ http://jquery.com/
 
 jQuery UI 官网：http://jqueryui.com/
 
+jQuery easyUI中文网：http://www.jeasyui.net/
+
 jQuery easyUI下载地址：http://www.jeasyui.com/download/v144.php
