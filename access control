@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-<script type="text/javascript" src="./js/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script type="text/javascript">
 	function SelectAllBox(){
 	$("input[type=checkbox]").prop("checked", true);
