@@ -2,6 +2,9 @@ JQuery的ready函数与JS的onload的区别：http://www.jb51.net/article/43562.
 1.执行时间
   window.onload必须等到页面内包括图片的所有元素加载完毕后才能执行。
   $(document).ready()是DOM结构绘制完毕后就执行，不必等到加载完毕。
+  
+    注意：jQuery实现所有页面元素都加载完才执行的方法是：$(window).load();  比$(document).ready()慢；速度和window.onload差不多；
+    但是，此方法是定义多少个执行多少个；
 
 2.编写个数不同
   window.onload不能同时编写多个，如果有多个window.onload方法，只会执行一个（最后一个）
@@ -14,6 +17,48 @@ JQuery的ready函数与JS的onload的区别：http://www.jb51.net/article/43562.
 3.简化写法
 window.onload没有简化写法
 $(document).ready(function(){})可以简写成$(function(){});
+
+/*******************************************************************************/
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ready和js中的onload的区别</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        //js中window对象的onload属性执行jsFunction1函数
+        window.onload = jsFunction1;
+        //js中window对象的onload属性执行jsFunction2函数
+        window.onload = jsFunction2;
+
+        $(window).load(jqFunction1);
+        //jquery的ready方法执行jqFunction1函数
+        $(document).ready(jqFunction1);
+        //jquery的ready方法执行jqFunction2函数
+        $(document).ready(jqFunction2);
+        //jsFunction1函数
+        function jsFunction1() {
+            alert("jsFunction1");
+        }
+        //jsFunction2函数
+        function jsFunction2() {
+            alert("jsFunction2");
+        }
+        //jqFunction1函数
+        function jqFunction1() {
+            alert("jqFunction1");
+        }
+        //jqFunction2函数
+        function jqFunction2() {
+            alert("jqFunction2");
+        }
+    </script>
+</head>
+<body onload="">
+<h1>ready和js中的onload的区别</h1>
+</body>
+</html>
 
 
 
