@@ -9,6 +9,7 @@ JQuery的ready函数与JS的onload的区别：http://www.jb51.net/article/43562.
   
     注意：如果一定要实现js onload 执行多个函数可以这样写：http://www.cnblogs.com/ylemzhang/archive/2011/01/17/1937482.html
     <body onload="a();b();"></body>并且js中不能再次定义window.onload事件;
+    同理js的其他事件也有类似的情况，比如说onclick
 
 3.简化写法
 window.onload没有简化写法
