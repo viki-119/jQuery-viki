@@ -3,8 +3,6 @@
 
      <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
      <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
-     
-d3：http://nvd3.org/examples/index.html
 
 jQuery表单验证
 
