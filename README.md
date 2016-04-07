@@ -23,3 +23,5 @@ jQuery easyUI中文网：http://www.jeasyui.net/
 jQuery easyUI下载地址：http://www.jeasyui.com/download/v144.php
 
 jQuery datatable 参数：http://www.cnblogs.com/nier/archive/2012/03/18/2404836.html
+
+jQuery datatable： http://www.datatables.net/
